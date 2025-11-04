@@ -52,13 +52,20 @@ double[] quadTriFunc(double a, double b, double c)
 }
 
 Console.WriteLine("input a, b, c for y=ax2+bx+c\n");
+
 double.TryParse(Console.ReadLine(), out double a);
+
 if (a == 0) throw new Exception("wrong value");
+
 double.TryParse(Console.ReadLine(), out double b);
 double.TryParse(Console.ReadLine(), out double c);
+
 double[] x = quadTriFunc(a, b, c);
-if (x != null && x[0] != x[1]) Console.WriteLine($"x1:{x[0]}\nx2:{x[1]}");
-else if (x != null) Console.WriteLine($"x:{x[0]}");
+
+if (x.Length == 2) Console.WriteLine($"x1:{x[0]}\nx2:{x[1]}");
+
+else if (x.Length == 1) Console.WriteLine($"x:{x[0]}");
+
 else Console.WriteLine("there's no x");
 
 List<Shape> shapes = new List<Shape>
